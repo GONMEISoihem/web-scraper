@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Scraped Books</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Scraped Books</h1>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.Title }}</td>
+                    <td>{{ book.Price }}</td>
+                    <td>{{ book.Availability }}</td>
+                    <td><a href="{{ book.Link }}" target="_blank">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-secondary mt-3">Back</a>
+    </div>
+</body>
+</html>
